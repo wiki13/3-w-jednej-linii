@@ -1,0 +1,52 @@
+$primary-color1:#feac5e;
+$primary-color2:#c779d0;
+$primary-color3:#4bc0c8;
+
+body{
+  background: linear-gradient(30deg, $primary-color1, $primary-color2, $primary-color3);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: transparent;
+  min-height: 100%;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1,h2,h3,h4,h5{
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+div.container{
+  background: rgba(255, 255, 255, 0.4);
+  height: 80vh;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  top: 80px;
+  padding: 20px;
+  position: relative;
+  header{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: table;
+    background: transparentize($primary-color1, 0.5);
+    h2{
+      display: table-cell;
+      vertical-align: middle;
+      margin: auto;
+      width: 50%;
+      font-weight: bold;
+    }
+  }
+  div.box{
+    position: absolute;
+    border: 1px solid white;
+    top:140px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+}
