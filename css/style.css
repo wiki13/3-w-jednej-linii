@@ -7,6 +7,8 @@ body {
   color: white;
   text-align: center;
   padding: 20px; }
+  body *:focus {
+    outline: 0; }
 
 h1, h2, h3, h4, h5 {
   color: white;
@@ -14,7 +16,7 @@ h1, h2, h3, h4, h5 {
 
 div.container {
   background: rgba(255, 255, 255, 0.4);
-  height: 80vh;
+  display: inline-block;
   float: none;
   margin-left: auto;
   margin-right: auto;
@@ -34,12 +36,8 @@ div.container {
       width: 50%;
       font-weight: bold; }
   div.container div.box {
-    position: absolute;
-    border: 1px solid white;
-    top: 140px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    position: relative;
+    margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -52,7 +50,7 @@ div.container {
 
 main {
   padding: 10px;
-  width: 500px;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,15 +62,48 @@ main {
   align-items: center;
   -ms-flex-line-pack: justify;
   align-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  background: rgba(255, 255, 255, 0.3);
+  /*display:grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px 60px;*/ }
+  main div.col {
+    position: relative;
+    width: 3.5vw;
+    padding: 0 2px;
+    padding-bottom: -20px; }
+    main div.col > div {
+      position: relative;
+      padding-top: 3.5vw;
+      margin-bottom: 10px; }
+      main div.col > div:last-child {
+        margin-bottom: 0; }
+
+aside {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  background: rgba(75, 192, 200, 0.5);
+  min-width: 20%;
+  position: relative; }
+
+nav {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  background: rgba(199, 121, 208, 0.5);
+  min-width: 20%;
+  position: relative; }
 
 div.item {
   cursor: pointer;
   position: relative;
-  border-radius: 10px;
-  width: 50px;
-  height: 50px; }
+  border-radius: 10px; }
   div.item::before {
     content: "";
     position: absolute;
@@ -98,7 +129,7 @@ div.item {
     bottom: 0;
     margin: auto; }
   div.item.select {
-    background: rgba(75, 192, 200, 0.2); }
+    background: rgba(254, 172, 94, 0.3); }
   div.item > div.gem {
     position: absolute;
     width: 70%;

@@ -11,6 +11,7 @@ body{
   color: white;
   text-align: center;
   padding: 20px;
+  *:focus {outline:0;}
 }
 
 h1,h2,h3,h4,h5{
@@ -20,7 +21,8 @@ h1,h2,h3,h4,h5{
 
 div.container{
   background: rgba(255, 255, 255, 0.4);
-  height: 80vh;
+//  height:35vw;
+  display: inline-block;
   float: none;
   margin-left: auto;
   margin-right: auto;
@@ -42,12 +44,9 @@ div.container{
     }
   }
   div.box{
-    position: absolute;
-    border: 1px solid white;
-    top:140px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    position: relative;
+    //border: 1px solid white;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -55,20 +54,59 @@ div.container{
 }
 main{
     padding: 10px;
-    width: 500px;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: space-between;
-    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.3);
+    /*display:grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px 60px;*/
+    div.col{
+      position: relative;
+      width: 3.5vw;
+      padding:0 2px;
+      padding-bottom: -20px;
+      >div{
+        position: relative;
+        padding-top: 3.5vw;
+        //height: 100px;
+        margin-bottom: 10px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+
+    }
+}
+
+aside{
+  flex: none;
+  background: transparentize($primary-color3, 0.5);
+  min-width:20%;
+  position: relative;
+
+}
+
+nav{
+  flex: none;
+  background: transparentize($primary-color2, 0.5);
+  min-width:20%;
+  position: relative;
+
 }
 
 div.item{
   cursor: pointer;
   position: relative;
   border-radius: 10px;
-  width: 50px;
-  height: 50px;
   &::before{
     content: "";
     position: absolute;
@@ -93,9 +131,8 @@ div.item{
     bottom: 0;
     margin: auto;
   }
-
   &.select{
-    background: transparentize($primary-color3, 0.8)
+    background: transparentize($primary-color1, 0.7)
   }
 
   >div.gem{

@@ -33,7 +33,7 @@ gulp.task('prefix',function(){
         .pipe(gulp.dest('./css'));
 });
 
-gulp.task('compress_js', function() {
+/*gulp.task('compress_js', function() {
   return gulp.src('./js/*.js')
     .pipe(minify({
         ext:{
@@ -45,7 +45,7 @@ gulp.task('compress_js', function() {
     }))
     .pipe(gulp.dest('./js'))
     .pipe(browserSync.stream());
-});
+});*/
 
 
 gulp.task('default', function(){
@@ -55,6 +55,6 @@ gulp.task('default', function(){
       }
   });
   gulp.watch("./sass/*.scss", gulp.series('sass','prefix','compress_css'));
-  gulp.watch("./js/*.js", gulp.series('compress_js'));
+//  gulp.watch("./js/*.js", gulp.series('compress_js'));
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
